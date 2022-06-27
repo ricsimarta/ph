@@ -66,16 +66,19 @@ body {
 
 header {
   width: 100%;
-  height: 50px;
+  height: 70px;
 
   position: fixed;
   top: 0;
   left: 0;
 
+  z-index: 100;
+
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
+  padding-bottom: 3px;
 
   box-shadow: 0 2px 10px 4px rgba(0, 0, 0, 0.2);
 
@@ -86,23 +89,72 @@ header {
   background-color: var(--white);
 }
 
-header span.capital {
+header a p::first-letter {
   font-size: 22px;
 }
 
-header a {
-  padding: 2px 8px 4px;
+header .headerLinks a {
+  padding: 6px 10px 6px;
   color: var(--secondary);
-  border-radius: 5px;
 
-  transition: all 0.2s ease;
+  display: flex;
+  align-items: center;
+
+  position: relative;
+  transition: all 0.3s;
 }
 
-header a:hover,
-header a:focus,
-header a.active {
-  background-color: var(--secondary);
-  color: var(--white);
+header .headerLinks a::before {
+  opacity: 0;
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -3px;
+  width: calc(100% + 6px);
+  height: 100%;
+  border: 2px solid var(--secondar);
+  border-style: solid none none none;
+  transition: all 0.3s;
+  transform: translateY(-10px);
+}
+
+header .headerLinks a::after {
+  opacity: 0;
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -3px;
+  width: calc(100% + 6px);
+  height: 100%;
+  border: 2px solid var(--secondar);
+  border-style: none none solid none;
+  transition: all 0.3s;
+  transform: translateY(10px);
+}
+
+header .headerLinks a:hover::before,
+header .headerLinks a:hover::after,
+header .headerLinks a:focus::before, 
+header .headerLinks a:focus::after,
+header .headerLinks a.active::before,
+header .headerLinks a.active::after {
+  transform: translateY(0);
+  opacity: 1;
+  z-index: 2;
+}
+
+header .headerLinks a.active {
+  background-color: rgba(72, 123, 124, 0.2);
+  animation: linkBackground 0.5s ease;
+}
+
+@keyframes linkBackground {
+  0% {
+    background-color: rgba(72, 123, 124, 0);
+  }
+  100% {
+    background-color: rgba(72, 123, 124, 0.2);
+  }
 }
 
 img.headerLogo {
@@ -113,23 +165,28 @@ img.headerLogo {
 header .headerLinks {
   display: flex;
   flex-direction: row;
-  gap: 20px;
+  gap: 16px;
   margin-right: 20px;
 }
 
 @media only screen and (max-width: 1320px) and (min-width: 1080px) {
-  img.headerLogo { display: none; }
-  header { justify-content: center; }
+  img.headerLogo {
+    display: none;
+  }
+
+  header {
+    justify-content: center;
+  }
 }
 
 @media only screen and (max-width: 1080px) {
-  header .headerLinks { 
+  header .headerLinks {
     flex-direction: column;
     position: absolute;
-    top: 50px;
+    top: 70px;
     right: -200px;
     margin-right: 0;
-    gap: 5px;
+    gap: 10px;
 
     transition: all 0.4s ease;
 
@@ -137,18 +194,14 @@ header .headerLinks {
     box-shadow: 2px 4px 4px 4px rgba(0, 0, 0, 0.2);
   }
 
-  header a:hover,
-  header a:focus,
-  header a.actiive {
-    border-radius: 0;
-  }
-
-  header a {
-    border-radius: 0;
-  }
-
   header .menuButton {
     display: block;
+  }
+
+  header .headerLinks a::before,
+  header .headerLinks a::after {
+    width: 100%;
+    left: 0;
   }
 }
 
@@ -156,7 +209,7 @@ header .headerLinks {
   display: none;
   position: absolute;
   top: 5px;
-  right: 9px;
+  right: 20px;
 
   width: 40px;
   height: 40px;
@@ -177,19 +230,19 @@ header .headerLinks {
 }
 
 .menuButton span:nth-child(1) {
-  top: 3px;
+  top: 12px;
 }
 
 .menuButton span:nth-child(2) {
-  top: 17px;
+  top: 26px;
 }
 
 .menuButton span:nth-child(3) {
-  top: 31px;
+  top: 40px;
 }
 
 .menuButton.open span:nth-child(1) {
-  top: 17px;
+  top: 24px;
   transform: rotate(45deg);
 }
 
@@ -199,15 +252,85 @@ header .headerLinks {
 }
 
 .menuButton.open span:nth-child(3) {
-  top: 17px;
+  top: 24px;
   transform: rotate(-45deg);
 }
 
-.menuButton.open ~ .headerLinks {
+.menuButton.open~.headerLinks {
   right: 0px;
 }
 
 /* --- HEADER END --- */
+
+/* --- HOME START --- */
+
+.swiper {
+  width: 100%;
+  height: calc(100vw * 0.3 + 20px);
+  max-height: 600px;
+
+  position: relative;
+
+  overflow: hidden;
+  border: 1px solid black;
+
+  margin: 100px auto;
+}
+
+.swiperContent {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  max-width: 1000px;
+  width: 80%;
+  min-width: 400px;
+  height: 100%;
+  
+  background-color: var(--white);
+  
+  transform: skew(-25deg) translateX(150px);
+
+  padding: 5vw;
+}
+
+.swiperContent p {
+  transform: skew(25deg);
+}
+
+p.swiperContentTitle {
+  font-size: clamp(24px, 4vw, 60px);
+}
+
+p.swiperContentSub {
+  font-size: clamp(16px, 2.5vw, 40px);
+  margin: 2vw;
+}
+
+.swiperButton {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+
+  width: 60%;
+  max-width: 800px;
+  height: 20%;
+  min-height: 40px;
+
+  border: 1px solid black;
+  z-index: 2;
+  background-color: white;
+}
+
+img.swiperImage {
+  width: 100%;
+  height: 100%;
+
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+/* --- HOME END --- */
 
 /* --- GRANTS START --- */
 
@@ -255,6 +378,7 @@ header .headerLinks {
   gap: 40px;
 
   scroll-margin-top: 50px;
+
 }
 
 .contactMap {
@@ -268,7 +392,7 @@ header .headerLinks {
 .contactMap iframe {
   width: 100%;
   height: 100%;
-
+  
   border: 1px solid rgba(0, 0, 0, 0.4);
 }
 
@@ -279,6 +403,7 @@ header .headerLinks {
   max-width: 600px;
   gap: 50px;
   padding: 30px 20px;
+  z-index: -1;
 }
 
 .contactAddress {
@@ -384,8 +509,11 @@ input[type=number] {
 }
 
 @media only screen and (max-width: 1260px) {
+
   .contactAddress,
-  .contactTel { margin-left: 20% }
+  .contactTel {
+    margin-left: 20%
+  }
 }
 
 /* --- CONTACT END ---  */

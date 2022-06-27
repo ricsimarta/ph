@@ -19,18 +19,18 @@ function Header() {
       </button>
 
       <div className='headerLinks'>
-        <NavLink to='/' onClick={scrollToTop}><span className='capital'>H</span>ome</NavLink>
-        <NavLink to='/about' onClick={scrollToTop}><span className='capital'>A</span>bout</NavLink>
-        <NavLink to='/services' onClick={scrollToTop}><span className='capital'>S</span>ervices</NavLink>
-        <NavLink to='/business' onClick={scrollToTop}><span className='capital'>B</span>usiness Development</NavLink>
-        <NavLink to='/products' onClick={scrollToTop}><span className='capital'>P</span>roducts to sell</NavLink>
-        <NavLink to='/resources' onClick={scrollToTop}><span className='capital'>F</span>ree resources</NavLink>
-        <NavLink to='/tender' onClick={scrollToTop}><span className='capital'>G</span>rants</NavLink>
+        <NavLink to='/' onClick={scrollToTop}><p>Home</p></NavLink>
+        <NavLink to='/about' onClick={scrollToTop}><p>About</p></NavLink>
+        <NavLink to='/services' onClick={scrollToTop}><p>Services</p></NavLink>
+        <NavLink to='/business' onClick={scrollToTop}><p>Business Development</p></NavLink>
+        <NavLink to='/products' onClick={scrollToTop}><p>Products to sell</p></NavLink>
+        <NavLink to='/resources' onClick={scrollToTop}><p>Free resources</p></NavLink>
+        <NavLink to='/tender' onClick={scrollToTop}><p>Grants</p></NavLink>
         <Link to='#contact' onClick={e => {
           e.preventDefault();
           window.location.href = '#contact';
           setMenuButtonClass('menuButton')
-        }}><span className='capital'>C</span>ontact / <span className='capital'>S</span>ide effect</Link>
+        }}><p>Contact/</p><p>Side effect</p></Link>
       </div>
       
     </header>

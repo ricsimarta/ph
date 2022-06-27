@@ -4,7 +4,7 @@ import Layout from './Layout'
 function Products() {
   return (
     <Layout>
-      Layout page
+      products page
     </Layout>
   )
 }

@@ -4,6 +4,16 @@ import Layout from './Layout'
 function Home() {
   return (
     <Layout>
+      <div className='swiper'>
+        <img className='swiperImage' src={require('./../images/slider-background.jpg')} alt="swiper image" />
+
+        <div className='swiperContent'>
+          <p className='swiperContentTitle'>Lorem ipsum</p>
+          <p className='swiperContentSub'>Lorem ipsum dolor sit amet.</p>
+          <button className='swiperButton'><p className='swiperButtonText'>Learn more</p></button>
+        </div>
+      </div>
+
       <div className='homeContent'>
         <p>
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Dignissimos nemo assumenda recusandae amet sed sapiente reprehenderit ex excepturi officiis voluptate, vel tempora nulla facilis doloribus illum maxime necessitatibus velit officia.
