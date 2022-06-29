@@ -1,16 +1,20 @@
 {
   "files": {
-    "main.css": "/ph/static/css/main.608d1b22.css",
-    "main.js": "/ph/static/js/main.b17f9e74.js",
+    "main.css": "/ph/static/css/main.cf4a250f.css",
+    "main.js": "/ph/static/js/main.f34a7b2d.js",
+    "static/media/Dr-Pfleger-recommendation-letter.png": "/ph/static/media/Dr-Pfleger-recommendation-letter.33616b44a8178e1f301f.png",
+    "static/media/Michael-Kotsanis-Hospira-Recommendation-letter.png": "/ph/static/media/Michael-Kotsanis-Hospira-Recommendation-letter.5d01d0132b3d814ef13b.png",
     "static/media/slider-background.jpg": "/ph/static/media/slider-background.630425aef6683cf76322.jpg",
+    "static/media/Shire-and-PTC-Pharmacenter-Recommendation.png": "/ph/static/media/Shire-and-PTC-Pharmacenter-Recommendation.45acb99f7ac2c12650a2.png",
     "static/media/NKFIA_portrait.png": "/ph/static/media/NKFIA_portrait.f4f4f6d930600dd63bd5.png",
+    "static/media/Tecnimede-Pharmacenter-recommendation-letter.png": "/ph/static/media/Tecnimede-Pharmacenter-recommendation-letter.a761cdfe304c5daadfc9.png",
     "static/media/phc_logo.jpeg": "/ph/static/media/phc_logo.fd11991c84019fa13551.jpeg",
     "index.html": "/ph/index.html",
-    "main.608d1b22.css.map": "/ph/static/css/main.608d1b22.css.map",
-    "main.b17f9e74.js.map": "/ph/static/js/main.b17f9e74.js.map"
+    "main.cf4a250f.css.map": "/ph/static/css/main.cf4a250f.css.map",
+    "main.f34a7b2d.js.map": "/ph/static/js/main.f34a7b2d.js.map"
   },
   "entrypoints": [
-    "static/css/main.608d1b22.css",
-    "static/js/main.b17f9e74.js"
+    "static/css/main.cf4a250f.css",
+    "static/js/main.f34a7b2d.js"
   ]
 }
